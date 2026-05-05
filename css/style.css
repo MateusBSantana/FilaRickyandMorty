@@ -1,0 +1,240 @@
+:root {
+  --fundo: #061826;
+  --fundo-card: #0d2b47;
+  --texto-claro: #f5f8ff;
+  --texto-suave: #b8c7da;
+  --verde: #4dd0a8;
+  --laranja: #ffb74d;
+  --vermelho: #fb7185;
+  --sombra: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top, #1d4f87 0%, #061826 65%);
+  color: var(--texto-claro);
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 64px;
+  display: grid;
+  gap: 24px;
+}
+
+.painel,
+.fila {
+  background: rgba(11, 29, 49, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px var(--sombra);
+  padding: 28px;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(77, 208, 168, 0.12);
+  color: var(--verde);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+}
+
+p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+
+.balao {
+  background: linear-gradient(135deg, #4dd0a8, #66b2ff);
+  color: #061826;
+  padding: 16px 18px;
+  border-radius: 18px;
+  font-weight: 700;
+  box-shadow: 0 16px 30px rgba(77, 208, 168, 0.2);
+}
+
+.acoes {
+  margin-top: 28px;
+  display: grid;
+  gap: 18px;
+}
+
+.input-grupo {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-size: 0.95rem;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--texto-claro);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--verde);
+  box-shadow: 0 0 0 4px rgba(77, 208, 168, 0.14);
+}
+
+.botoes {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.botao {
+  padding: 14px 18px;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+}
+
+.botao-primario {
+  background: linear-gradient(135deg, #4dd0a8, #33b6f2);
+  color: #061826;
+  box-shadow: 0 14px 25px rgba(77, 208, 168, 0.26);
+}
+
+.botao-secundario {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--texto-claro);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.info {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+.status {
+  margin-top: 12px;
+  min-height: 24px;
+  font-weight: 600;
+}
+
+.fila h2 {
+  margin-top: 0;
+}
+
+.lista-fila {
+  margin-top: 18px;
+  display: grid;
+  gap: 16px;
+}
+
+.item-fila {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  animation: entrada 0.4s ease;
+}
+
+.item-fila.primeiro {
+  border-color: var(--verde);
+  background: linear-gradient(135deg, rgba(77, 208, 168, 0.18), rgba(255,255,255,0.08));
+}
+
+.item-fila::before {
+  content: "PRIMEIRO";
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.item-fila.primeiro::before {
+  opacity: 1;
+}
+
+.imagem-personagem {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  min-height: 120px;
+}
+
+.conteudo-personagem {
+  display: grid;
+  gap: 8px;
+}
+
+.nome-personagem {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.especie {
+  color: var(--texto-suave);
+}
+
+.fila-vazia {
+  margin: 0;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  color: var(--texto-suave);
+  text-align: center;
+}
+
+@keyframes entrada {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 720px) {
+  .item-fila {
+    grid-template-columns: 1fr;
+  }
+  .cabecalho {
+    flex-direction: column;
+  }
+}

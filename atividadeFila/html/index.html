@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fila de Personagens</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="painel">
+      <div class="cabecalho">
+        <div>
+          <span class="tag">Projeto</span>
+          <h1>Fila de Personagens</h1>
+          <p>Simule uma fila FIFO usando personagens da API Rick and Morty.</p>
+        </div>
+        <div class="balao">FIFO + API</div>
+      </div>
+
+      <div class="acoes">
+        <div class="input-grupo">
+          <label for="id-personagem">ID do personagem (1-826)</label>
+          <input type="number" id="id-personagem" min="1" max="826" placeholder="Digite um número" />
+        </div>
+        <div class="botoes">
+          <button id="botao-adicionar" class="botao botao-primario">Adicionar à fila</button>
+          <button id="botao-remover" class="botao botao-secundario">Remover da fila</button>
+        </div>
+        <p class="info">Você pode adicionar o próximo personagem pelo ID ou usar um número aleatório.</p>
+      </div>
+
+      <div class="status" id="status"></div>
+    </section>
+
+    <section class="fila" id="fila">
+      <h2>Fila atual</h2>
+      <div class="lista-fila" id="lista-fila">
+        <p class="fila-vazia">A fila está vazia. Adicione personagens para começar.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
